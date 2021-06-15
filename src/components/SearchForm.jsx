@@ -1,36 +1,40 @@
 import React, { useEffect, useRef } from "react";
 import { useGlobalContext } from "../context";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, IconButton, InputBase, Paper} from "@material-ui/core";
+import {InputBase, Paper, Divider} from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 
-
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
+  inputContainer: {
     width: "100%",
-    marginTop: theme.spacing(4),
-    justifyContent: "space-around",
-  },
-  paper: {
-    border: "2px solid green",
-    margin: theme.spacing(6),
-    minWidth: 500,
-    padding: "2px 4px",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#F8F8F8",
+    borderRadius: 4,
+    "&:focus-within": {
+      boxShadow: "0px 0px 0px 1px #ffca28 inset",
+    }
   },
   input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
+    width: "100%",
+    padding: theme.spacing(2),
+    "&:hover": {
+      color: "#c2c2c2"
+    }
   },
   iconButton: {
-    padding: 10,
+    margin: 10,
   },
   divider: {
     height: 28,
-    margin: 4,
   },
+  paper: {
+    display: "flex",
+    minWidth: 140,
+    marginTop: theme.spacing(6),
+    justifyContent: "space-between",
+  }
 }));
 
 export default function SearchForm() {
@@ -52,8 +56,13 @@ export default function SearchForm() {
   }, []);
 
   return (
-    <Container className={classes.root}>
-      <Paper component="form" className={classes.paper} onSubmit={handleSubmit}>
+    <Paper elevation={2} component="form" onSubmit={handleSubmit} className={classes.paper}>
+      <div className={classes.inputContainer}>
+        <SearchIcon className={classes.iconButton} />
+        <Divider
+          className={classes.divider}
+          orientation="vertical"
+        />
         <InputBase
           className={classes.input}
           placeholder="Search for a cocktail"
@@ -64,12 +73,8 @@ export default function SearchForm() {
           onChange={searchCocktail}
           autoComplete="off"
         />
-        <IconButton type="submit" className={classes.iconButton} aria-label="search">
-          <SearchIcon/>
-        </IconButton>
-        
+        </div>
       </Paper>
-    </Container>
   );
 }
 

@@ -10,6 +10,9 @@ const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    display: "flex",
+    justifyContent: "space-around",
+    margin: 20,
   },
   titleSection: {
     display: "flex",
@@ -24,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     maxWidth: 1200,
     padding: theme.spacing(2),
-    margin: "auto",
     marginBottom: theme.spacing(6),
     [theme.breakpoints.down('md')]: {
       maxWidth: 500,   
@@ -39,6 +41,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
     maxHeight: "100%",
     borderRadius: "2%",
+    objectFit: "cover",
+
   },
   label: {
     fontSize: 20,
@@ -52,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 32,
   },
   buttonArea: {
-    marginTop: theme.spacing(3),
+    margin: "20px auto",
   },
   button: {
     "& .MuiButton-text": {
