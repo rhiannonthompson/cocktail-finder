@@ -12,30 +12,41 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     backgroundColor: "#F8F8F8",
     borderRadius: 4,
+    padding: theme.spacing(1),
     "&:focus-within": {
-      boxShadow: "0px 0px 0px 1px #ffca28 inset",
+      boxShadow: "0px 0px 0px 1px #ffdc27 inset",
     }
   },
   input: {
     width: "100%",
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
+    fontSize: 22,
     "&:hover": {
       color: "#c2c2c2"
+    },
+    "&:focus-within": {
+      color: "#292929",
     }
   },
-  iconButton: {
+  icon: {
     margin: 10,
+    fontSize: 48,
   },
   divider: {
-    height: 28,
+    height: 38,
+    width: 2,
   },
   paper: {
     display: "flex",
     minWidth: 140,
-    marginTop: theme.spacing(6),
     justifyContent: "space-between",
+    border: "0.5px solid #c2c2c2",
+    "&:focus-within": {
+      border: "none",
+    }
   }
 }));
+
 
 export default function SearchForm() {
   const classes = useStyles();
@@ -56,9 +67,9 @@ export default function SearchForm() {
   }, []);
 
   return (
-    <Paper elevation={2} component="form" onSubmit={handleSubmit} className={classes.paper}>
+    <Paper elevation={1} component="form" onSubmit={handleSubmit} className={classes.paper}>
       <div className={classes.inputContainer}>
-        <SearchIcon className={classes.iconButton} />
+        <SearchIcon color="primary" className={classes.icon} fontSize="large"/>
         <Divider
           className={classes.divider}
           orientation="vertical"

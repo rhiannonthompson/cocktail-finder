@@ -20,10 +20,6 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: theme.spacing(3),
   },
-  title: {
-    fontSize: 58,
-    textTransform: "uppercase",
-  },
   paper: {
     maxWidth: 1200,
     padding: theme.spacing(2),
@@ -41,12 +37,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "100%",
     maxHeight: "100%",
     borderRadius: "2%",
-    objectFit: "cover",
-
-  },
-  label: {
-    fontSize: 20,
-    fontWeight: 600,
   },
   list: {
     padding: theme.spacing(6),
@@ -165,17 +155,16 @@ export default function SingleCocktail() {
     <>
       <div className={classes.titleSection}>
         <Typography
-          className={classes.title}
-          variant="h1"
-          component="h3"
+          variant="h2"
+          component="h2"
           color="textSecondary"
         >
           {name}
         </Typography>
       </div>
       <div className={classes.root}>
-        <Paper elevation={0} className={classes.paper}>
-          <Grid justify="space-around" container spacing={4} style={{"alignItems": "center"}}>
+        <Paper elevation={2} className={classes.paper}>
+          <Grid justify="space-around" container spacing={4}>
             <Grid item>
               <div className={classes.image}>
                 <img alt={name} src={image} className={classes.img} />
@@ -194,12 +183,10 @@ export default function SingleCocktail() {
                   ))}
                   <Grid item className={classes.buttonArea}>
                     <Button
-                      color="primary"
-                      variant="outlined"
-                      className={classes.button}
                       onClick={handlePageChange}
+                      size="large"
                     >
-                      Search for a different cocktail
+                      Back
                     </Button>
                   </Grid>
                 </Grid>

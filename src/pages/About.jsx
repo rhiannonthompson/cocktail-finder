@@ -1,13 +1,35 @@
 import React from 'react'
+import { Container, Typography, makeStyles } from '@material-ui/core'
+import { content } from "../content"
 
-const About = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    marginTop: theme.spacing(6),
+  },
+  titleSection: {
+    display: "flex",
+    justifyContent: "space-around",
+    padding: theme.spacing(2),
+    margin: theme.spacing(3),
+  },
+  title: {
+    textTransform: "uppercase",
+    marginBottom: theme.spacing(4),
+  },
+}));
+
+export default function About() {
+  
+  const classes = useStyles();
+
   return (
-    <section className="section about-section">
-      <h1 className="section-title">about us</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate totam distinctio porro laboriosam adipisci voluptatem id, odit odio commodi saepe impedit? Laborum cum ratione excepturi eligendi non, saepe sed perferendis quo doloribus? Exercitationem ad perspiciatis officia, atque perferendis eius dolore suscipit quisquam hic placeat inventore pariatur tenetur quam ab blanditiis harum quia itaque? Unde, exercitationem ipsa iure enim autem molestiae optio eaque, dolorem molestias voluptatum perspiciatis consequuntur et quibusdam non asperiores sit, vero ab suscipit cum veritatis architecto facilis modi. Doloremque, qui. Corporis, aliquid quia commodi alias beatae ipsum rerum aliquam debitis, nobis voluptate et eveniet veniam quos voluptates reiciendis.
-      </p>
-    </section>
+    <Container maxWidth="md" className={classes.root}>
+      <Typography color="textSecondary" className={classes.title} variant="h2" component="h2">
+      about this project
+      </Typography>
+      <Typography variant="h6" component="p">
+        {content.about}
+      </Typography>
+    </Container>
   )
 }
-
-export default About

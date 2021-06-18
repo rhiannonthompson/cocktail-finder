@@ -1,10 +1,17 @@
 import React from "react";
 import Cocktail from "./Cocktail";
 import Loading from "./Loading";
+import NotFound from "./NotFound";
 import { useGlobalContext } from "../context";
 import { Grid, Typography, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(6),
+    textAlign: "center",
+    border: "2px solid black",
+    padding: theme.spacing(1),
+  },
   gridArea: {
     flexGrow: 1,
   },
@@ -22,29 +29,26 @@ export default function CocktailList() {
     return <Loading />;
   }
 
-  if (cocktails.length < 1) {
-    return (
-      <h2 className="section-title">
-        no cocktails matched your search criteria
-      </h2>
-    );
-  }
-
   return (
     <>
-      <Typography className={classes.heading} variant="h4" component="h2">
-        Cocktails
-      </Typography>
-      <div className={classes.gridArea}>
-        <Grid container spacing={5}>
-          {cocktails.map((item) => (
-            <Grid key={item.id} item lg={4} md={6} sm={12}>
-              <Cocktail {...item} />
+      {cocktails.length < 1 ? (
+        <NotFound />
+      ) : (
+        <>
+          <Typography className={classes.heading} variant="h2" component="h2" color="textSecondary">
+            Cocktails
+          </Typography>
+          <div className={classes.gridArea}>
+            <Grid container spacing={5}>
+              {cocktails.map((item) => (
+                <Grid key={item.id} item lg={4} md={6} sm={12}>
+                  <Cocktail {...item} />
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </div>
-
+          </div>
+        </>
+      )}
     </>
   );
 }
