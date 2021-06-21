@@ -1,6 +1,6 @@
 # Cocktail Finder 
  
-A simple cocktail search app for finding cocktail recipes. [Live demo]().
+A simple cocktail search app for finding cocktail recipes. [Live demo](https://determined-elion-49b6c3.netlify.app/).
 
 ## Technologies Used
 
