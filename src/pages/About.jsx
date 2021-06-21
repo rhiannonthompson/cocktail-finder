@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, Typography, makeStyles } from '@material-ui/core'
-import { content } from "../content"
+import { Container, Typography, makeStyles, Link, Button } from '@material-ui/core'
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,15 +21,27 @@ const useStyles = makeStyles((theme) => ({
 export default function About() {
   
   const classes = useStyles();
+  const history = useHistory();
+
+  function handlePageChange() {
+    history.push("/");
+  }
 
   return (
     <Container maxWidth="md" className={classes.root}>
       <Typography color="textSecondary" className={classes.title} variant="h2" component="h2">
       about this project
       </Typography>
-      <Typography variant="h6" component="p">
-        {content.about}
+      <Typography variant="h6" component="p" gutterBottom>
+      Cocktail Finder was designed as an exercise to learn how to call and query an API using React. This application uses <Link href="https://www.thecocktaildb.com/">The CocktailDB</Link>, an open crowed-sourced database, for all the cocktail recipes and images. The front-end was built with modern React, using a hooks-based implementation with the inbuilt context provider for state management. The project uses Material-UI for styling the React components, with a custom theme created for the project. The code for this project this available at: <Link href="https://github.com/rhiannonthompson/cocktail-finder">github.com/rhiannonthompson/cocktail-finder</Link>.
       </Typography>
+      <Button
+        onClick={handlePageChange}
+        size="large"
+        style={{marginTop: 20}}
+      >
+        Back
+      </Button>
     </Container>
   )
 }

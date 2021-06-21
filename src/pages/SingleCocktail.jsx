@@ -48,11 +48,6 @@ const useStyles = makeStyles((theme) => ({
   buttonArea: {
     margin: "20px auto",
   },
-  button: {
-    "& .MuiButton-text": {
-      padding: 18,
-    },
-  },
   container: {
     "& .MuiGrid-grid-xs-true": {
       maxHeight: "none",
