@@ -19,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     width: "100%",
-    padding: theme.spacing(4),
-    fontSize: 22,
+    marginLeft: theme.spacing(2),
     "&:hover": {
       color: "#c2c2c2"
     },
@@ -30,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     margin: 10,
-    fontSize: 48,
+    fontSize: 38,
   },
   divider: {
     height: 38,
@@ -67,7 +66,7 @@ export default function SearchForm() {
   }, []);
 
   return (
-    <Paper elevation={1} component="form" onSubmit={handleSubmit} className={classes.paper}>
+    <Paper elevation={0} component="form" onSubmit={handleSubmit} className={classes.paper}>
       <div className={classes.inputContainer}>
         <SearchIcon color="primary" className={classes.icon} fontSize="large"/>
         <Divider

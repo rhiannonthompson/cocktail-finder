@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "flex",
     justifyContent: "space-around",
-    margin: 20,
+    margin: theme.spacing(4),
   },
   titleSection: {
     display: "flex",

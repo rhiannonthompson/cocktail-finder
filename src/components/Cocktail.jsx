@@ -9,21 +9,11 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
-// import {colors} from "../theme"
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    "&:hover": {
-      // backgroundColor: colors.light_yellow.main,
-    }
-  }
-}))
 
 export default function Cocktail({ image, name, id, info, glass }) {
   
   const history = useHistory();
-  const classes = useStyles();
 
   function handlePageChange() {
     history.push(`/cocktail/${id}`);
@@ -38,7 +28,7 @@ export default function Cocktail({ image, name, id, info, glass }) {
               {name}
             </Typography>
             <Typography variant="h5" gutterBottom component="p" color="textSecondary">
-              {`Glass: ${glass}`}
+              {glass}
             </Typography>
             <Typography variant="body1" color="textSecondary" component="p">
               {info}
@@ -46,7 +36,7 @@ export default function Cocktail({ image, name, id, info, glass }) {
           </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button variant="outlined" className={classes.button} onClick={handlePageChange}>Learn More</Button>
+        <Button variant="outlined" onClick={handlePageChange}>Learn More</Button>
       </CardActions>
     </Card>
   );

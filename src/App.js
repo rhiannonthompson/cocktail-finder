@@ -78,32 +78,32 @@ customTheme.typography.h1 = {
 }
 
 customTheme.typography.h2 = {
-  fontSize: "2.5rem",
+  fontSize: "2rem",
   textTransform: "uppercase",
   fontWeight: 400,
   [customTheme.breakpoints.up("md")]: {
-    fontSize: "3.5rem",
+    fontSize: "2.5rem",
   },
 }
 
 customTheme.typography.h4 = {
-  fontSize: "2.6rem",
+  fontSize: "1.2rem",
   fontWeight: 500,
-  [customTheme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-}
-
-customTheme.typography.h5 = {
-  fontSize: "1.5rem",
-  fontWeight: 600,
   [customTheme.breakpoints.up("md")]: {
     fontSize: "1.4rem",
   },
 }
 
-customTheme.typography.body1 = {
+customTheme.typography.h5 = {
   fontSize: "1.3rem",
+  fontWeight: 600,
+  [customTheme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+}
+
+customTheme.typography.body1 = {
+  fontSize: "1rem",
   [customTheme.breakpoints.up("md")]: {
     fontSize: "1rem",
   },

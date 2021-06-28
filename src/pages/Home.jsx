@@ -6,7 +6,7 @@ import Scroll from "../components/Scroll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: "10px, 0",
+    margin: "20px, 0",
   },
   background: {
     paddingTop: theme.spacing(8),

@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridArea: {
     flexGrow: 1,
+    margin: theme.spacing(3),
   },
   heading: {
     textAlign: "center",
@@ -39,9 +40,9 @@ export default function CocktailList() {
             Cocktails
           </Typography>
           <div className={classes.gridArea}>
-            <Grid container spacing={5}>
+            <Grid container spacing={3}>
               {cocktails.map((item) => (
-                <Grid key={item.id} item lg={4} md={6} sm={12}>
+                <Grid key={item.id} item lg={3} md={6} sm={12}>
                   <Cocktail {...item} />
                 </Grid>
               ))}
