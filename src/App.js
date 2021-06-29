@@ -110,13 +110,7 @@ customTheme.typography.body1 = {
 }
 
 export default function App() {
-  // N.B. to make react-router to work with netlify you MUST
-  // add a _redirects file to the public folder
-  // and write /* /index.html 200
 
-  // when deploying with git you have to change the build
-  // command to "CI= react-scripts test" in the package.json
-  // file
   return (
     <ThemeProvider theme={customTheme}>
       <Router>
