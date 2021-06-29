@@ -24,7 +24,7 @@ export default function Error() {
   return (
     <Container maxWidth="lg" className={classes.root}>
       <Typography className={classes.text} variant="h5" component="p">
-        Opps! You may have lost your way.
+        Oops! You may have lost your way.
       </Typography>
       <Button
         onClick={handlePageChange}
