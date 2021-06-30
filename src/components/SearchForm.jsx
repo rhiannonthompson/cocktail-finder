@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useGlobalContext } from "../context";
 import { makeStyles } from "@material-ui/core/styles";
 import {InputBase, Paper, Divider} from "@material-ui/core";
@@ -61,9 +61,6 @@ export default function SearchForm() {
     e.preventDefault();
   };
 
-  useEffect(() => {
-    searchValue.current.focus();
-  }, []);
 
   return (
     <Paper elevation={0} component="form" onSubmit={handleSubmit} className={classes.paper}>
@@ -79,6 +76,7 @@ export default function SearchForm() {
           inputProps={{ "aria-label": "Search for a cocktail" }}
           type="text"
           id="name"
+          autoFocus={false}
           inputRef={searchValue}
           onChange={searchCocktail}
           autoComplete="off"
